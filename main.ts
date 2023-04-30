@@ -1,9 +1,20 @@
 basic.forever(function () {
     if (tinkercademy.PIR(DigitalPin.P15)) {
         basic.showIcon(IconNames.Heart)
-        wuKong.setAllMotor(45, 39)
-        basic.pause(500)
-        wuKong.setAllMotor(100, 81)
+        music.playMelody("C5 B A G F E D C ", 120)
+        wuKong.setAllMotor(-24, 81)
+        basic.pause(1000)
+        wuKong.setAllMotor(24, -81)
+        basic.pause(1000)
+        wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, 270)
+        basic.pause(1000)
+        wuKong.setServoAngle(wuKong.ServoTypeList._360, wuKong.ServoList.S0, 90)
+        basic.pause(1000)
+        wuKong.setServoSpeed(wuKong.ServoList.S2, 80)
+        basic.pause(1000)
+        wuKong.setServoSpeed(wuKong.ServoList.S2, -80)
+        basic.pause(1000)
+        music.playMelody("C D E F G A B C5 ", 120)
         wuKong.stopAllMotor()
     } else {
         basic.showIcon(IconNames.Sad)
